@@ -10,7 +10,7 @@ const str = "/";
 const lastVisitProxyCookie = "__PROXY_VISITEDSITE__";
 const passwordCookieName = "__PROXY_PWD__";
 const proxyHintCookieName = "__PROXY_HINT__";
-const password = "";
+const password = "rwby_ovo";
 const showPasswordPage = true;
 const replaceUrlObj = "__location__yproxy__"
 const injectedJsId = "__yproxy_injected_js_id__"
@@ -646,10 +646,7 @@ const mainPage = `
 <html>
 <head>
   <style>
-    body{
-      background:rgb(150,10,10);
-      color:rgb(240,240,0);
-    }
+    
     a{
       color:rgb(250,250,180);
     }
@@ -678,15 +675,7 @@ const mainPage = `
   </style>
 </head>
 <body>
-    <h3 class="center">
-        I made this project because some extreme annoying network filter software in my school, which is notorious "Goguardian", and now it is open source at <a href="https://github.com/1234567Yang/cf-proxy-ex/">https://github.com/1234567Yang/cf-proxy-ex/</a>.
-      </h3>
-      <br><br><br>
-      <ul style="font-size:25;">
-      <li class="important">How to use this proxy:<br>
-        Type the website you want to go to after the website's url, for example: <br>
-        https://the current url/github.com<br>OR<br>https://the current url/https://github.com</li>
-      </ul>
+   
         <form id="urlForm" onsubmit="redirectToProxy(event)">
             <fieldset>
                 <legend>Proxy Everything</legend>
@@ -702,26 +691,7 @@ const mainPage = `
                 window.open(currentOrigin + '/' + targetUrl, '_blank');
             }
         </script>
-      <ul>
-        <li>If your browser show 400 bad request, please clear your browser cookie<br></li>
-        <li>Why I make this:<br> Because school blcok every website that I can find math / CS and other subjects' study material and question solutions. In the eyes of the school, China (and some other countries) seems to be outside the scope of this "world". They block access to server IP addresses in China and block access to Chinese search engines and video websites. Of course, some commonly used social software has also been blocked, which once made it impossible for me to send messages to my parents on campus. I don't think that's how it should be, so I'm going to fight it as hard as I can. I believe this will not only benefit myself, but a lot more people can get benefits.</li>
-        <li>If this website is blocked by your school: Setup a new one by your self.</li>
-        <li>Limitation:<br>Although I tried my best to make every website proxiable, there still might be pages or resources that can not be load, and the most important part is that <span class="important">YOU SHOULD NEVER LOGIN ANY ACCOUNT VIA ONLINE PROXY</span>.</li>
-      </ul>
-
-    <h3>
-        <br>
-        <span>Bypass the network blockade:</span>
-        <br><br>
-        <span>Traditional VPNs.</span>
-        <br><br>
-        <span>Bypass by proxy: You can buy a domain($1) and setup by yourself: </span><a href="https://github.com/1234567Yang/cf-proxy-ex/blob/main/deploy_on_deno_tutorial.md">how to setup a proxy</a><span>. Unless they use white list mode, this can always work.</span>
-        <br><br>
-        <span>Youtube video unblock: "Thanks" for Russia that they started to invade Ukraine and Google blocked the traffic from Russia, there are a LOT of mirror sites working. You can even <a href="https://github.com/iv-org/invidious">setup</a> one by yourself.</span>
-    </h3>
-    <p style="font-size:280px !important;width:100%;" class="center">
-        ☭
-    </p>
+      
 </body>
 </html>
 `;
@@ -974,23 +944,23 @@ async function handleRequest(request) {
         // }
 
 
-        var inject = 
-        `
-        <!DOCTYPE html>
-        <script id="${injectedJsId}">
-        ${((!hasProxyHintCook) ? proxyHintInjection : "")}
-        ${httpRequestInjection}
-        </script>
-        `;
+        // var inject = 
+        // `
+        // <!DOCTYPE html>
+        // <script id="${injectedJsId}">
+        // ${((!hasProxyHintCook) ? proxyHintInjection : "")}
+        // ${httpRequestInjection}
+        // </script>
+        // `;
 
         // <script id="inj">document.getElementById("inj").remove();</script>
 
 
 
 
-        bd = (hasBom?"\uFEFF":"") + //第一个是零宽度不间断空格，第二个是空
-        inject + 
-        bd;
+        //bd = (hasBom?"\uFEFF":"") + //第一个是零宽度不间断空格，第二个是空
+        //inject + 
+        //bd;
       }
 
       //else{
